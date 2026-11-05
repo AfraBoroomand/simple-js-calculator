@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Light.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Light.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Medium.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Medium.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src:
+    url(../fonts/woff2/IRANSansWeb_Bold.woff2) format("woff2"),
+    url(../fonts/woff/IRANSansWeb_Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IRANSans", sans-serif;
+}
+:root {
+  --bg-primary: #061e29;
+  --bg-surface: #1d546d;
+  --accent: #5f9598;
+  --text-light: #f3f4f4;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: var(--bg-primary);
+  color: var(--bg-surface);
+}
+.calculator {
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+  background: var(--text-light);
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: calculatorEnter 0.8s ease;
+}
+.logo {
+  width: 170px;
+  height: auto;
+  display: inline-block;
+  margin-bottom: 24px;
+  animation: logoanimation 3s ease-in-out infinite;
+  border-radius: 50px;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.25));
+}
+h1 {
+  color: var(--bg-primary);
+  margin-bottom: 12px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+.description {
+  color: var(--bg-surface);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 2rem;
+  margin-bottom: 28px;
+}
+.start-btn {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--text-light);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(95, 149, 152, 0.35);
+  animation: pulsebtn 2s ease-in-out infinite;
+}
+.info {
+  margin-top: 15px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(29, 84, 109, 0.08);
+  color: var(--bg-surface);
+  line-height: 1.8rem;
+  font-size: 14px;
+  text-align: right;
+  border-right: 4px solid var(--accent);
+}
+@keyframes calculatorEnter {
+  from {
+    opacity: 0;
+    transform: translatey(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes logoanimation {
+  0%,
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.25));
+  }
+  50% {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 18px 25px rgba(0, 0, 0, 0.15));
+  }
+}
+@keyframes pulsebtn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (max-width: 600px) {
+  .calculator {
+    padding: 25px;
+  }
+  .h1 {
+    font-size: 24px;
+  }
+}
